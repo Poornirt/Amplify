@@ -1,0 +1,62 @@
+# this is an auto generated file. This will be overwritten
+query SyncTodos(
+  $filter: ModelTodosFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncTodos(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      priority
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetTodos($id: ID!) {
+  getTodos(id: $id) {
+    id
+    name
+    priority
+    description
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListTodoss(
+  $filter: ModelTodosFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTodoss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      priority
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
